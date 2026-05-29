@@ -6,18 +6,18 @@ import { PawPrint } from 'lucide-react';
 const Hero = () => {
   return (
     <section className="w-full min-h-[70vh] flex items-center bg-linear-to-br from-[#161a1d] via-[#1b1f23] to-[#0f1113] text-white">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 my-10 gap-10 items-center">
 
         {/* Left Content */}
-        <div>
-          <div className="flex items-center gap-2 mb-4 text-red-500">
+        <div className=''>
+          <div className="flex items-center gap-2 mb-4 text-red-700">
             <PawPrint size={28} />
-            <span className="font-medium">Find Your Perfect Companion</span>
+            <span className="font-semibold">Find Your Perfect Companion</span>
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
             Adopt a Pet, <br />
-            Give Love a <span className="text-red-600">Forever Home</span>
+            Give Love a <span className="text-red-700">Forever Home</span>
           </h1>
 
           <p className="text-gray-400 mt-5 text-lg">
