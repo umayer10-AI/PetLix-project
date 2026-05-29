@@ -14,7 +14,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="w-full border-b bg-[#161a1d] text-white">
+    <nav className="w-full border-b border-b-red-900 bg-[#161a1d] text-white">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         
         <Link href="/" className="flex items-center gap-2">
@@ -54,7 +54,7 @@ const Navbar = () => {
 
           <Link
             href="/get-started"
-            className="bg-linear-to-r from-red-700 to-[#220b34] hover:scale-95 text-white px-5 py-2 rounded-xl font-medium transition"
+            className="bg-linear-to-r from-red-700 to-[#220b34] hover:scale-98 text-white px-5 py-2 rounded-xl font-medium transition"
           >
             Get Started
           </Link>
@@ -76,7 +76,7 @@ const Navbar = () => {
               href={link.path}
               className={`block px-3 py-2 rounded-lg ${
                 pathname === link.path
-                  ? 'bg-red-700 text-white'
+                  ? 'bg-red-800 text-white'
                   : 'hover:text-red-500'
               }`}
             >
@@ -86,14 +86,14 @@ const Navbar = () => {
 
           <Link
             href="/login"
-            className="block hover:text-red-500"
+            className="block hover:text-red-700"
           >
             Login
           </Link>
 
           <Link
             href="/get-started"
-            className="block bg-red-700 text-white text-center py-2 rounded-xl"
+            className="block bg-linear-to-r from-red-700 to-[#220b34] hover:scale-98 text-white text-center py-2 rounded-xl"
           >
             Get Started
           </Link>
