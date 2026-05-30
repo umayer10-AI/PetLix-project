@@ -6,6 +6,7 @@ const links = [
   { name: 'My Request', href: '/dashboard/request' },
   { name: 'Add Pet', href: '/dashboard/add' },
   { name: 'My Listings', href: '/dashboard' },
+  { name: 'Back', href: '/' },
 ];
 
 const SideBar = () => {
@@ -25,7 +26,7 @@ const SideBar = () => {
               href={link.href}
               className={`px-4 py-2 rounded-md font-medium transition-all ${
                 isActive
-                  ? 'bg-gradient-to-r from-red-700 to-[#220b34] text-white'
+                  ? 'bg-linear-to-r from-red-700 to-[#220b34] text-white'
                   : 'hover:text-gray-700 hover:bg-gray-100'
               }`}
             >

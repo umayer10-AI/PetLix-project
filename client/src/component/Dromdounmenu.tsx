@@ -13,6 +13,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import Link from "next/link"
 
 export function DropdownMenuIcons() {
   return (
@@ -21,10 +22,12 @@ export function DropdownMenuIcons() {
         <Button variant="outline">Open</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem>
-          <UserIcon />
-          Dashboard
-        </DropdownMenuItem>
+        <Link href={'/dashboard'}>
+            <DropdownMenuItem>
+            <UserIcon />
+            Dashboard
+            </DropdownMenuItem>
+        </Link>
 
         <DropdownMenuSeparator />
         <DropdownMenuItem className="text-red-400 font-bold" variant="destructive">
