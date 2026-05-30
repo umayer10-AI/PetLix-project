@@ -2,8 +2,8 @@ import { betterAuth } from "better-auth";
 import { MongoClient } from "mongodb";
 import { mongodbAdapter } from "better-auth/adapters/mongodb";
 
-const client = new MongoClient("mongodb://localhost:27017");
-await client.connect();
+// const client = new MongoClient("mongodb://localhost:27017");
+const client = new MongoClient(process.env.MY_URL!);
 const db = client.db('hello');
 
 export const auth = betterAuth({
