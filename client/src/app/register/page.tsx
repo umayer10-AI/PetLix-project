@@ -5,7 +5,7 @@ import { FcGoogle } from 'react-icons/fc';
 export default function RegisterPage() {
   return (
     <div className="flex items-center justify-center p-4 mt-5">
-      <div className="w-full max-w-md  bg-[#230101] rounded-2xl shadow-lg p-8">
+      <div className="w-full max-w-md  bg-[#101214] border border-red-800 rounded-2xl shadow-lg p-8 shadow-red-800">
         <h1 className="text-3xl font-bold text-center mb-6">
           Create Account
         </h1>
@@ -63,7 +63,7 @@ export default function RegisterPage() {
 
         <button
           type="button"
-          className="w-full flex items-center justify-center gap-3 border py-2 rounded-lg hover:bg-gray-50 transition"
+          className="w-full flex items-center justify-center gap-3 border py-2 rounded-lg hover:bg-red-800 transition"
         >
           <FcGoogle size={24} />
           Sign in with Google
@@ -71,7 +71,7 @@ export default function RegisterPage() {
 
         <p className="text-center mt-5 text-sm">
           Already have an account?
-          <span className="text-blue-600 cursor-pointer ml-1">
+          <span className="text-red-800 font-semibold cursor-pointer ml-1">
             Login
           </span>
         </p>
