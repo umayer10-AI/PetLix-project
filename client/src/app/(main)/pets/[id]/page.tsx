@@ -12,7 +12,7 @@ const page = async ({params}: p) => {
 
     const {id} = await params
     const data = await UserIdData(id)
-    console.log(data)
+    // console.log(data)
 
     return (
         <div>

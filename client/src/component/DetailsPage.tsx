@@ -1,4 +1,5 @@
 'use client';
+import { postData } from '@/lib/action';
 import Image from 'next/image';
 
 interface PetDetailsPageProps {
@@ -26,6 +27,12 @@ interface P {
 }
 
 export default function PetDetailsPage({pet}: P) {
+
+  const a = async (e) => {
+    e.preventDefault();
+    await postData(pet)
+  }
+
   return (
     <div className="max-w-7xl mx-auto px-6 py-10">
       <div className="grid lg:grid-cols-3 gap-8">
@@ -49,7 +56,7 @@ export default function PetDetailsPage({pet}: P) {
                   </p>
                 </div>
 
-                <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full">
+                <span className="bg-green-100 text-green-700 px-4 py-1 rounded-full">
                   Available
                 </span>
               </div>
@@ -172,14 +179,15 @@ export default function PetDetailsPage({pet}: P) {
                   Message to Owner
                 </label>
                 <textarea
-                  rows={4}
+                  rows={2}
                   placeholder="Tell the owner why you'd be a great match..."
                   className="w-full mt-1 p-3 rounded-lg bg-slate-800 border border-slate-700"
                 />
               </div>
 
               <button
-                type="submit"
+                // type="submit"
+                onClick={a}
                 className="w-full py-3 rounded-full font-semibold bg-linear-to-r from-red-700 to-[#220b34] hover:scale-98 transition duration-300"
               >
                 Adopt {pet.name}
