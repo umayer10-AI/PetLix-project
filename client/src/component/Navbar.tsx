@@ -54,7 +54,7 @@ const Navbar = () => {
 
           <Link
             href="/get-started"
-            className="bg-linear-to-r from-red-700 to-[#220b34] hover:scale-98 text-white px-5 py-2 rounded-xl font-medium transition"
+            className="bg-linear-to-r from-red-700 to-[#220b34] hover:scale-98 transition duration-300 text-white px-5 py-2 rounded-xl font-medium"
           >
             Get Started
           </Link>
@@ -93,7 +93,7 @@ const Navbar = () => {
 
           <Link
             href="/get-started"
-            className="block bg-linear-to-r from-red-700 to-[#220b34] hover:scale-98 text-white text-center py-2 rounded-xl"
+            className="block bg-linear-to-r from-red-700 to-[#220b34] hover:scale-98 transition duration-300 text-white text-center py-2 rounded-xl"
           >
             Get Started
           </Link>
