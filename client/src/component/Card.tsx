@@ -1,6 +1,7 @@
 'use client';
 import { Pet } from '@/lib/type';
 import { Heart, MapPin, PawPrint } from 'lucide-react';
+import Link from 'next/link';
 
 type Props = {
   pet: Pet
@@ -55,9 +56,9 @@ const Card = ({pet}:Props) => {
 
       <div className="flex gap-2">
 
-        <button className="px-3 py-2 rounded-xl text-sm border border-gray-600 text-white hover:bg-gray-800 transition">
+        <Link href={`pets/${pet._id}`} className="px-3 py-2 rounded-xl text-sm border border-gray-600 text-white hover:bg-gray-800 transition">
           View
-        </button>
+        </Link>
 
         <button className="bg-linear-to-r from-red-700 to-[#220b34] px-4 py-2 rounded-xl text-sm hover:scale-95 transition">
           Adopt Now
