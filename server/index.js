@@ -25,6 +25,7 @@ const run = async() => {
 
         const db = client.db('hello')
         const userCollection = db.collection('myAllData')
+        const booking = db.collection('booking')
 
         app.get('/user', async (req,res) => {
             const cursor = await userCollection.find()
@@ -39,6 +40,12 @@ const run = async() => {
             }
             const result = await userCollection.findOne(query)
             res.json(result)
+        })
+
+        app.post('/booking', async (req,res) => {
+          const newData = req.body
+          const result = await booking.insertOne(newData)
+          res.send(result)
         })
 
         await client.db("admin").command({ ping: 1 });
