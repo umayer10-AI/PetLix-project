@@ -32,11 +32,11 @@ export default function Navbar2() {
       <div className="flex items-center gap-3">
         
         <Image
-          src="https://i.pravatar.cc/100"
+          src="https://images.unsplash.com/photo-1539125530496-3ca408f9c2d9"
           alt="avatar"
           width={40}
           height={40}
-          className="rounded-full"
+          className="rounded-full h-10 w-10 object-cover"
         />
 
         <div className="flex flex-col leading-tight">
