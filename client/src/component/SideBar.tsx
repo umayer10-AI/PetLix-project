@@ -26,7 +26,7 @@ const SideBar = () => {
               className={`px-4 py-2 rounded-md font-medium transition-all ${
                 isActive
                   ? 'bg-gradient-to-r from-red-700 to-[#220b34] text-white'
-                  : 'text-gray-700 hover:bg-gray-100'
+                  : 'hover:text-gray-700 hover:bg-gray-100'
               }`}
             >
               {link.name}
