@@ -7,3 +7,8 @@ export const UserIdData = async (id:string) => {
     const res = await fetch(`http://localhost:5000/user/${id}`)
     return res.json()
 }
+
+export const bookingData = async () => {
+    const res = await fetch(`http://localhost:5000/booking`)
+    return res.json()
+}
