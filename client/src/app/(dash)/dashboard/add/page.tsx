@@ -1,6 +1,29 @@
-import React from 'react';
+'use client'
+import { postData } from '@/lib/action';
+import { useForm } from 'react-hook-form';
 
-const page = () => {
+type Inputs  = {
+  name: string;
+  type: string;
+  breed: string;
+  age: number;
+  gender: string;
+  image: string;
+  healthCondition: string;
+  vaccinated: boolean;
+  location: string;
+  adoptionFee: number;
+  description: string;
+};
+
+const Addpage = () => {
+
+    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
+
+    const a = async (v) => {
+        await postData(v)
+    }
+
     return (
         <div className="max-w-4xl mx-auto">
   <div className="bg-slate-900/80 backdrop-blur-md border border-white/10 rounded-3xl px-8 pb-8 pt-4 shadow-2xl">
@@ -14,7 +37,7 @@ const page = () => {
       </p>
     </div>
 
-    <form className="grid md:grid-cols-2 gap-4">
+    <form onSubmit={handleSubmit(a)} className="grid md:grid-cols-2 gap-4">
 
       {/* Pet Name */}
       <div>
@@ -23,6 +46,7 @@ const page = () => {
         </label>
         <input
           type="text"
+          {...register("name", { required: true })}
           placeholder="Buddy"
           className="w-full bg-slate-800 border border-slate-700 rounded-xl p-2 text-white focus:outline-none focus:ring-2 focus:ring-red-500"
         />
@@ -33,7 +57,9 @@ const page = () => {
         <label className="text-sm text-slate-300 mb-1 block">
           Species
         </label>
-        <select className="w-full bg-slate-800 border border-slate-700 rounded-xl p-2 text-white focus:outline-none focus:ring-2 focus:ring-red-500">
+        <select 
+        {...register("type", { required: true })}
+        className="w-full bg-slate-800 border border-slate-700 rounded-xl p-2 text-white focus:outline-none focus:ring-2 focus:ring-red-500">
           <option>Dog</option>
           <option>Cat</option>
           <option>Bird</option>
@@ -48,6 +74,7 @@ const page = () => {
         </label>
         <input
           type="text"
+          {...register("breed", { required: true })}
           placeholder="Golden Retriever"
           className="w-full bg-slate-800 border border-slate-700 rounded-xl p-2 text-white"
         />
@@ -60,6 +87,7 @@ const page = () => {
         </label>
         <input
           type="number"
+          {...register("age", { required: true })}
           placeholder="2"
           className="w-full bg-slate-800 border border-slate-700 rounded-xl p-2 text-white"
         />
@@ -70,7 +98,9 @@ const page = () => {
         <label className="text-sm text-slate-300 mb-1 block">
           Gender
         </label>
-        <select className="w-full bg-slate-800 border border-slate-700 rounded-xl p-2 text-white">
+        <select 
+        {...register("gender", { required: true })}
+        className="w-full bg-slate-800 border border-slate-700 rounded-xl p-2 text-white">
           <option>Male</option>
           <option>Female</option>
         </select>
@@ -83,6 +113,7 @@ const page = () => {
         </label>
         <input
           type="text"
+          {...register("location", { required: true })}
           placeholder="Dhaka"
           className="w-full bg-slate-800 border border-slate-700 rounded-xl p-2 text-white"
         />
@@ -95,6 +126,7 @@ const page = () => {
         </label>
         <input
           type="url"
+          {...register("image", { required: true })}
           placeholder="https://i.ibb.co/example.jpg"
           className="w-full bg-slate-800 border border-slate-700 rounded-xl p-2 text-white"
         />
@@ -107,6 +139,7 @@ const page = () => {
         </label>
         <input
           type="text"
+          {...register("healthCondition", { required: true })}
           placeholder="Healthy"
           className="w-full bg-slate-800 border border-slate-700 rounded-xl p-2 text-white"
         />
@@ -117,7 +150,9 @@ const page = () => {
         <label className="text-sm text-slate-300 mb-1 block">
           Vaccination Status
         </label>
-        <select className="w-full bg-slate-800 border border-slate-700 rounded-xl p-2 text-white">
+        <select 
+        {...register("vaccinated", { required: true })}
+        className="w-full bg-slate-800 border border-slate-700 rounded-xl p-2 text-white">
           <option>Vaccinated</option>
           <option>Not Vaccinated</option>
         </select>
@@ -130,6 +165,7 @@ const page = () => {
         </label>
         <input
           type="number"
+          {...register("adoptionFee", { required: true })}
           placeholder="500"
           className="w-full bg-slate-800 border border-slate-700 rounded-xl p-2 text-white"
         />
@@ -155,6 +191,7 @@ const page = () => {
         </label>
         <textarea
           rows={2}
+          {...register("description", { required: true })}
           placeholder="Tell people about your pet..."
           className="w-full bg-slate-800 border border-slate-700 rounded-xl p-3 text-white resize-none"
         />
@@ -175,4 +212,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default Addpage;

@@ -1,7 +1,6 @@
 import ListingAllCard from '@/component/ListingAllCard';
 import { bookingData } from '@/lib/data';
 import Link from 'next/link';
-import React from 'react';
 
 const page = async () => {
 
