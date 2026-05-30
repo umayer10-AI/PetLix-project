@@ -30,7 +30,22 @@ export default function PetDetailsPage({pet}: P) {
 
   const a = async (e) => {
     e.preventDefault();
-    await postData(pet)
+
+    const d = {
+      name: pet.name,
+      type: pet.type,
+      breed: pet.breed,
+      age: pet.age,
+      gender: pet.gender,
+      image: pet.image,
+      healthCondition: pet.healthCondition,
+      vaccinated: pet.vaccinated,
+      location: pet.location,
+      adoptionFee: pet.adoptionFee,
+      description: pet.description,
+    }
+
+    await postData(d)
   }
 
   return (
