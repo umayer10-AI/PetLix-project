@@ -1,30 +1,25 @@
 'use client';
 import { authClient } from '@/lib/auth-client';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
 
 type Inputs = {
-  name: string,
   email: string,
-  image: string,
   password: string,
 };
 
-export default function RegisterPage() {
+export default function LoginPage() {
 
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>();
-    const router = useRouter()
 
     const a = async (v:Inputs) => {
         console.log(v)
 
-        // const { data, error } = await authClient.signUp.email({
-        //     name: v.name,
+        // const { data, error } = await authClient.signIn.email({
         //     email: v.email,
         //     password: v.password,
-        //     image: v.image,
+            // rememberMe: true,
         //     callbackURL: "/",
         // });
 
@@ -45,15 +40,6 @@ export default function RegisterPage() {
         </h1>
 
         <form onSubmit={handleSubmit(a)} className="space-y-4">
-          <div>
-            <label className="block mb-1 font-medium">Name</label>
-            <input
-              type="text"
-              {...register("name", { required: true })}
-              placeholder="Enter your name"
-              className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-red-700"
-            />
-          </div>
 
           <div>
             <label className="block mb-1 font-medium">Email</label>
@@ -65,15 +51,6 @@ export default function RegisterPage() {
             />
           </div>
 
-          <div>
-            <label className="block mb-1 font-medium">Image URL</label>
-            <input
-              type="url"
-              {...register("image", { required: true })}
-              placeholder="https://example.com/image.jpg"
-              className="w-full border rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-red-700"
-            />
-          </div>
 
           <div>
             <label className="block mb-1 font-medium">Password</label>
@@ -109,8 +86,8 @@ export default function RegisterPage() {
 
         <p className="text-center mt-5 text-sm">
           Already have an account?
-          <Link href={'/login'} className="text-red-800 font-semibold cursor-pointer ml-1">
-            Login
+          <Link href={'/register'} className="text-red-800 font-semibold cursor-pointer ml-1">
+            Register
           </Link>
         </p>
       </div>
