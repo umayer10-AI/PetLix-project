@@ -189,7 +189,6 @@ export default function PetDetailsPage({pet}: P) {
         </div>
 
       </div>
-
     </div>
   );
 }
