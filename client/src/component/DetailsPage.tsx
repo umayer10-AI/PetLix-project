@@ -30,7 +30,6 @@ export default function PetDetailsPage({pet}: P) {
     <div className="max-w-7xl mx-auto px-6 py-10">
       <div className="grid lg:grid-cols-3 gap-8">
         
-        {/* Left Side */}
         <div className="lg:col-span-2">
           <div className="rounded-2xl shadow overflow-hidden">
             <Image
@@ -190,6 +189,7 @@ export default function PetDetailsPage({pet}: P) {
         </div>
 
       </div>
+      
     </div>
   );
 }

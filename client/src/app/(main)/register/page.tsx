@@ -20,21 +20,21 @@ export default function RegisterPage() {
     const a = async (v:Inputs) => {
         console.log(v)
 
-        const { data, error } = await authClient.signUp.email({
-            name: v.name,
-            email: v.email,
-            password: v.password,
-            image: v.image,
-            callbackURL: "/",
-        });
+        // const { data, error } = await authClient.signUp.email({
+        //     name: v.name,
+        //     email: v.email,
+        //     password: v.password,
+        //     image: v.image,
+        //     callbackURL: "/",
+        // });
 
-        if(data){
-            alert("Data Successfully")
-            router.push('/')
-        }
-        if(error){
-            alert(error.message)
-        }
+        // if(data){
+        //     alert("Data Successfully")
+        //     router.push('/')
+        // }
+        // if(error){
+        //     alert(error.message)
+        // }
     }
 
   return (
