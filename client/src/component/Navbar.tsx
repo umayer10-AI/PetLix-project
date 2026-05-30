@@ -53,7 +53,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            href="/get-started"
+            href="/pets"
             className="bg-linear-to-r from-red-700 to-[#220b34] hover:scale-98 transition duration-300 text-white px-5 py-2 rounded-xl font-medium"
           >
             Get Started
@@ -92,7 +92,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            href="/get-started"
+            href="/pets"
             className="block bg-linear-to-r from-red-700 to-[#220b34] hover:scale-98 transition duration-300 text-white text-center py-2 rounded-xl"
           >
             Get Started
